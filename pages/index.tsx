@@ -1,78 +1,109 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import Footer from "@/components/Footer";
+import GuestLayout from "@/components/GuestLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
+const Index = () => {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
-    >
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the index.tsx file.
+    <GuestLayout>
+      <section className="bg-gray-100 py-10">
+        <div className="text-center">
+          <h1 className="mb-5 font-bold text-3xl">
+            "Aset Teknisi KLA Computer Surabaya Merr"
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mb-7">
+            Lakukan penginstalan aplikasi standar dengan cara klik tombol
+            download dibawah ini:
+          </p>
+          <a
+            className="bg-yellow-400 rounded-lg px-4 py-1.5 text-white hover:bg-yellow-500 transition"
+            href="#"
+            download
+          >
+            Download
+          </a>
+          <p className="mt-7">
+            🚀🚀🚀🚀🚀🚀🚀 . 🔥🔥🔥🔥🔥🔥🔥 . 🐐🐐🐐🐐🐐🐐🐐
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      <section id="allApps" className="py-7 px-30 scroll-mt-20">
+        <h3 className="mb-3 text-xl font-bold">Semua Aplikasi</h3>
+        <input
+          className="border rounded py-1 px-3 mb-5 min-w-sm"
+          type="text"
+          placeholder="Cari aplikasi"
+        />
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="bg-white rounded-lg shadow hover:shadow-md transition p-3 flex flex-col items-center text-center gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732205.png"
+              className="h-10"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs/pages/getting-started?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <h4 className="text-sm font-semibold">Chrome</h4>
+            <a
+              href="#"
+              className="w-full text-xs bg-yellow-400 text-white py-1.5 rounded-md hover:opacity-90 transition"
+            >
+              Download
+            </a>
+          </div>
+
+          <div className="bg-white rounded-lg shadow hover:shadow-md transition p-3 flex flex-col items-center text-center gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732242.png"
+              className="h-10"
+            />
+            <h4 className="text-sm font-semibold">VLC</h4>
+            <a
+              href="#"
+              className="w-full text-xs bg-yellow-400 text-white py-1.5 rounded-md hover:opacity-90 transition"
+            >
+              Download
+            </a>
+          </div>
+
+          <div className="bg-white rounded-lg shadow hover:shadow-md transition p-3 flex flex-col items-center text-center gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2306/2306154.png"
+              className="h-10"
+            />
+            <h4 className="text-sm font-semibold">WinRAR</h4>
+            <a
+              href="#"
+              className="w-full text-xs bg-yellow-400 text-white py-1.5 rounded-md hover:opacity-90 transition"
+            >
+              Download
+            </a>
+          </div>
+
+          <div className="bg-white rounded-lg shadow hover:shadow-md transition p-3 flex flex-col items-center text-center gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"
+              className="h-10"
+            />
+            <h4 className="text-sm font-semibold">Zoom</h4>
+            <a
+              href="#"
+              className="w-full text-xs bg-yellow-400 text-white py-1.5 rounded-md hover:opacity-90 transition"
+            >
+              Download
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="cekTT" className="py-7 px-30 scroll-mt-18">
+        <h3 className="mb-3 text-xl font-bold">Cek Tukar Tambah</h3>
+      </section>
+
+      <section id="videoDisplay" className="py-7 px-30 scroll-mt-18">
+        <h3 className="mb-3 text-xl font-bold">Video Display</h3>
+      </section>
+
+      <Footer />
+    </GuestLayout>
   );
-}
+};
+
+export default Index;
