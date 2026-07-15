@@ -1,8 +1,15 @@
-import React from "react";
+import { useToggle } from "@/stores/useToggle";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const router = useRouter();
+  const isAdmin: boolean = router.pathname.startsWith("/admin");
+  const { collapsed } = useToggle();
+
   return (
-    <footer className="bg-purple-950 py-5">
+    <footer
+      className={`${isAdmin ? (collapsed ? "ms-0" : "ms-72") : ""} bg-purple-800 py-5 transition-all`}
+    >
       <p className="text-center text-white">
         © 2026 KLA Computer | created with sincerity💙 by{" "}
         <a className="hover:underline" target="_blank" href="#">

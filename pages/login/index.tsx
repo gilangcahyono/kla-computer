@@ -1,5 +1,5 @@
-const Index = () => {
+const Login = () => {
   return <div>login Page</div>;
 };
 
-export default Index;
+export default Login;
