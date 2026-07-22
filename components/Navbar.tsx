@@ -1,8 +1,29 @@
 import { useToggle } from "@/stores/useToggle";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { AiOutlineMenu } from "react-icons/ai";
-import { MdOutlineDashboard } from "react-icons/md";
+import { FileUp, FolderPlus, Menu, Search, SearchIcon } from "lucide-react";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import {
+  CreditCardIcon,
+  LogOutIcon,
+  SettingsIcon,
+  UserIcon,
+} from "lucide-react";
+import { Input } from "./ui/input";
+import { FieldLabel } from "./ui/field";
 
 const Navbar = () => {
   const router = useRouter();
@@ -10,53 +31,72 @@ const Navbar = () => {
   const { toggle } = useToggle();
 
   return (
-    <nav
-      className={`bg-purple-950 flex justify-between items-center ${isAdmin ? "px-5" : "px-20"} py-4 sticky top-0`}
-    >
+    <nav className="bg-purple-950 flex justify-between items-center p-4 sticky top-0 shadow z-50">
       <div className="flex items-center gap-4">
-        {isAdmin && (
-          <button className="text-2xl cursor-pointer" onClick={toggle}>
-            <AiOutlineMenu className="text-white" />
-          </button>
-        )}
-        <Link href="#">
+        <Link href="/">
           <img
-            className="h-8"
+            className="h-7"
             src="/kla_computer_sidebar.png"
             alt="KLA Computer"
           />
         </Link>
       </div>
-      <div className="flex items-center gap-4 text-white font-semibold">
-        {isAdmin ? (
-          <button className="bg-yellow-400 rounded-lg px-4 py-1.5 hover:bg-yellow-500">
-            Logout
-          </button>
-        ) : (
-          <>
-            <Link className="hover:underline hover:text-yellow-400" href="#">
-              Beranda
-            </Link>
-            <Link
-              className="hover:underline hover:text-yellow-400"
-              href="#apps"
-            >
-              Semua Aplikasi
-            </Link>
-            <Link
-              className="hover:underline hover:text-yellow-400"
-              href="#tradeIns"
-            >
-              Tukar Tambah
-            </Link>
-            <Link
-              className="hover:underline hover:text-yellow-400"
-              href="#videos"
-            >
-              Video Display
-            </Link>
-          </>
-        )}
+      <div>
+        <Button className="bg-yellow-500 hover:bg-white hover:text-black">
+          Install Standard Apps
+        </Button>
+      </div>
+      {/* <div>
+        <InputGroup>
+          <InputGroupInput
+            className="w-xs text-white"
+            id="inline-start-input"
+            placeholder="Search..."
+          />
+          <InputGroupAddon align="inline-start">
+            <SearchIcon className="text-muted-foreground" />
+          </InputGroupAddon>
+        </InputGroup>
+      </div> */}
+      <div className="flex items-center gap-4">
+        <Search color="white" className="cursor-pointer" size={26} />
+        <DropdownMenu>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="outline"
+                size="icon-lg"
+                className="bg-white text-purple-950"
+              >
+                <Menu />
+              </Button>
+            }
+          />
+          <DropdownMenuContent>
+            <DropdownMenuItem>
+              <form onSubmit={() => null}>
+                <FieldLabel className="flex items-center gap-1.5">
+                  <Input type="file" hidden />
+                  <FileUp />
+                  Upload File
+                </FieldLabel>
+              </form>
+            </DropdownMenuItem>
+            {/* <DropdownMenuItem>
+              <FolderPlus />
+              New Folder
+            </DropdownMenuItem> */}
+            <DropdownMenuItem>
+              <SettingsIcon />
+              Settings
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem variant="destructive">
+              <LogOutIcon />
+              Log out
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </nav>
   );

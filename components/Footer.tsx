@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`${isAdmin ? (collapsed ? "ms-0" : "ms-72") : ""} bg-purple-800 py-5 transition-all`}
+      className={`${isAdmin ? (collapsed ? "ms-0" : "ms-72") : ""} bg-yellow-600 py-5 transition-all`}
     >
       <p className="text-center text-white">
         © 2026 KLA Computer | created with sincerity💙 by{" "}
